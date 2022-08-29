@@ -1,0 +1,7 @@
+<form action="/name/" method="post">
+    {% csrf_token %}
+    {{ form }}
+    {% comment %} <label for="name">Your name: </label> {% endcomment %}
+    {% comment %} <input id="name" type="text" name="your_name" value="{{ current_name }}"> {% endcomment %}
+    <input type="submit" value="OK">
+</form>
