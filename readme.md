@@ -6,7 +6,8 @@
 - [x] Template rendering
 - [x] Static files
 - [x] Forms
-    - [ ] File upload
+    - [x] File upload
+      - [ ] Storage
 - [ ] MongoDB storage
     - [ ] gridfs
  
