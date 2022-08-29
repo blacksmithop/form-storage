@@ -1,4 +1,4 @@
-<form action="/name/" method="post">
+<form action="/name/" enctype="multipart/form-data" method="post">
     {% csrf_token %}
     {{ form }}
     {% comment %} <label for="name">Your name: </label> {% endcomment %}
