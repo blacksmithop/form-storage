@@ -5,7 +5,7 @@
 - [x] Basic configuration
 - [x] Template rendering
 - [x] Static files
-- [ ] Forms
+- [x] Forms
     - [ ] File upload
 - [ ] MongoDB storage
     - [ ] gridfs
