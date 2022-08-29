@@ -77,8 +77,12 @@ WSGI_APPLICATION = "form.wsgi.application"
 
 DATABASES = {
     "default": {
-        "ENGINE": "",
-    },
+        "ENGINE": "djongo",
+        "NAME": "file-upload",
+        "CLIENT": {
+            "host": "mongodb://localhost:27017",
+        },
+    }
 }
 
 
