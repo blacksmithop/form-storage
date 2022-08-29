@@ -1,6 +1,10 @@
-from django import forms
+from django.forms import ModelForm
+from .models import Person
 
 
-class NameForm(forms.Form):
-    name = forms.CharField(label="Name", max_length=30)
-    file = forms.FileField()
+class PersonForm(ModelForm):
+    class Meta:
+        model = Person
+        fields = ["first_name", "last_name", "dob", "email", "avatar"]
+
+    # file = forms.FileField()

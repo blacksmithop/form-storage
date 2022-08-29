@@ -1,14 +1,8 @@
-from http import client
 from django.shortcuts import render
-from .forms import NameForm
 from django.http import JsonResponse
-from pymongo import MongoClient
 
-
-client = MongoClient("mongodb://localhost:27017/")
-db = client["file_upload"]
-
-collection = db["test"]
+from .forms import PersonForm
+from .models import Person
 
 
 def tell_name(request):
@@ -22,18 +16,16 @@ def save_name(request):
 
     if request.method == "POST":
 
-        form = NameForm(request.POST, request.FILES)
-        print(request.FILES)
+        form = PersonForm(request.POST, request.FILES)
 
         if form.is_valid():
 
-            data = {"name": request.POST.get("name")}
+            payload = request.POST.dict()
+            del payload["csrfmiddlewaretoken"]
 
-            collection.insert_one(data)
-
-            return JsonResponse(data)
+            return JsonResponse(payload)
 
     else:
-        form = NameForm()
+        form = PersonForm()
 
     return render(request, "form.html", {"form": form})
