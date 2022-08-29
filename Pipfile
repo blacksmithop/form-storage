@@ -8,6 +8,8 @@ django = "*"
 black = "*"
 pymongo = {extras = ["gssapi", "snappy", "srv", "tls"], version = "*"}
 dnspython = "*"
+djongo = "*"
+pytz = "*"
 
 [dev-packages]
 
