@@ -14,8 +14,10 @@ Including another URLconf
     2. Add a URL to urlpatterns:  path('blog/', include('blog.urls'))
 """
 from django.contrib import admin
-from django.urls import path
-from form_body.views import tell_name, save_name
+from django.urls import path, include
+import form_body.views as fb_view
+from . import views
+
 from django.contrib.staticfiles.urls import staticfiles_urlpatterns
 
 urlpatterns = ...
@@ -23,8 +25,9 @@ urlpatterns = ...
 
 urlpatterns = [
     path("admin/", admin.site.urls),
-    path("greet/", tell_name),
-    path("name/", save_name),
+    path("index/", views.index),
+    path("greet/", fb_view.tell_name),
+    path("name/", fb_view.save_name),
 ]
 
 urlpatterns += staticfiles_urlpatterns()
