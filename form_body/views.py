@@ -14,7 +14,8 @@ def save_name(request):
 
     if request.method == "POST":
 
-        form = NameForm(request.POST)
+        form = NameForm(request.POST, request.FILES)
+        print(request.FILES)
 
         if form.is_valid():
             return JsonResponse({"name": request.POST.get("name")})
